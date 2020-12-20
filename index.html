@@ -1,0 +1,41 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>WOL网络唤醒</title>
+		<link rel="stylesheet" href="./css/font-awesome.min.css" />
+		<link rel="stylesheet" href="./css/main.css" />
+	</head>
+	<body>
+		<header class="panel-cover" style="background-image: url(https://www.fantasyzone.cc/api/tu)">
+			<div class="panel-main">
+				<div class="panel-main__inner panel-inverted">
+					<div class="panel-main__content">
+						<center><h1 class="panel-cover__title panel-title">&nbsp;WOL网络唤醒</h1></center>
+						<hr class="panel-cover__divider">
+						<a type="button" onclick="open1()" id="1">启动</a>
+						<!-- <a type="button" onclick="open2()" id="2">启动2</a>-->
+					</div>
+				</div>
+				<div class="panel-cover--overlay cover-slate"></div>
+			</div>
+		</header>
+		<script>
+			//AJAX,多设备以此类推
+			function open1() {
+				var xmlhttp;
+				if (window.XMLHttpRequest) {
+					xmlhttp = new XMLHttpRequest();
+				} else {
+					xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+				}
+				xmlhttp.onreadystatechange = function() {
+					if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+						document.getElementById("1").innerHTML = xmlhttp.responseText;
+					}
+				}
+				xmlhttp.open("GET", "./1/open.php", true);
+				xmlhttp.send();
+			}
+		</script>
+	</body>
+</html>
